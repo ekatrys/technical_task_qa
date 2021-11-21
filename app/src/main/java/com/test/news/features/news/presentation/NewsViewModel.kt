@@ -18,6 +18,10 @@ class NewsViewModel @Inject constructor(
         is NewsIntent.GetNews -> newsInteractor.getNews(intent.isPremium)
     }
 
+    /* using EspressoIdlingResource in this place is not correct,
+    but I want to highlight how useful it is and with developer support,
+    it will be put in a right place
+     */
     override fun reduceViewState(result: NewsResult): NewsViewState {
         return when (result) {
             NewsResult.Loading -> {

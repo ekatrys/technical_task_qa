@@ -11,7 +11,6 @@ class LoginActivityTest : BaseTest() {
     @get:Rule
     val activityRule = ActivityScenarioRule(LoginActivity::class.java)
 
-
     @Test
     fun checkLoginPageElementsVisible() {
         LoginPage().assertPageDisplayed()
