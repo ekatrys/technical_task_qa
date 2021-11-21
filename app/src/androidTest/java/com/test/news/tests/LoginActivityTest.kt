@@ -46,7 +46,7 @@ class LoginActivityTest : BaseTest() {
     }
 
     companion object {
-        private const val VALID_USER_NAME = "password"
+        private const val VALID_USER_NAME = "user1"
         private const val VALID_USER_PASSWORD = "password"
         private const val INVALID_USER_NAME = "789"
         private const val INVALID_USER_PASSWORD = "123"
