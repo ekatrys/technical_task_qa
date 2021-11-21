@@ -7,7 +7,6 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.test.news.R
 import com.test.news.framework.extention.*
 import com.test.news.framework.reporting.step
-import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.Matchers
 
 class NewsPage {
