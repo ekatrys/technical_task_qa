@@ -27,12 +27,6 @@ class NewsPage {
         }
     }
 
-    fun swipeNextImageIntoSliderNews(position: Int){
-        step("click on first news") {
-            listNews.swipeLeftImageIntoNewsSliderByPosition(position)
-        }
-    }
-
     fun assertPageDisplayed() = apply {
         step("Assert News page is displayed") {
             listNews.isDisplayed()
@@ -56,7 +50,14 @@ class NewsPage {
         }
     }
 
-    fun openImageFromSliderIntoNewsByPosition(imagePlace: Int, newsPosition: Int) {
-        childAtPosition(allOf(listNews,listSliderImage),1)
+    fun clickOnImageFromSliderIntoNewsByPosition(imagePlace: Int, newsPosition: Int) {
+        step("Open image on position $imagePlace into slider on news on position $newsPosition") {
+            childAtPosition(
+                parentMatcher = listNews,
+                childPosition = newsPosition
+            )
+                .scrollToPosition(imagePlace)
+                .click()
+        }
     }
 }

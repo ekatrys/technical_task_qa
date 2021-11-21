@@ -32,13 +32,17 @@ class NewsActivityTest : BaseTest() {
 
     @Test
     fun checkCorrectIntentForNotFirstNewsImageInSlider() {
+        val newsPosition = 0
+        val imagePositionInSlider = 1
+
         NewsPage {
             assertPageDisplayed()
-            swipeNextImageIntoSliderNews(0)
-            Thread.sleep(500)
-            clickOnNewsByPosition(0)
+            clickOnImageFromSliderIntoNewsByPosition(
+                imagePositionInSlider,
+                newsPosition
+            )
             assertUriForOpenMatchesWithExpected(
-                FIRST_NEWS_MODEL.imageUrlsList[1]
+                FIRST_NEWS_MODEL.imageUrlsList[imagePositionInSlider]
             )
         }
     }

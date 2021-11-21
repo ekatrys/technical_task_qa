@@ -32,17 +32,6 @@ fun Matcher<View>.scrollToPosition(position: Int) = apply {
         )
 }
 
-fun Matcher<View>.swipeLeftImageIntoNewsSliderByPosition(position: Int) = apply {
-    onView(this)
-        .perform(
-            RecyclerViewActions
-                .actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                    position,
-                    ViewActions.swipeLeft()
-                )
-        )
-}
-
 fun childAtPosition(parentMatcher: Matcher<View>, childPosition: Int): Matcher<View> {
     return object : TypeSafeMatcher<View>() {
         override fun describeTo(description: Description) {
