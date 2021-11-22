@@ -26,6 +26,8 @@ versions.mockito2 = "3.2.4"
 versions.mockito_kotlin = '2.2.0'
 versions.arch_core = '2.1.0'
 versions.test_rules = "1.2.0"
+versions.allure = "2.2.6"
+versions.uiautomator = "2.2.0"
 
 def build_versions = [:]
 build_versions.min_sdk = 21
@@ -72,6 +74,9 @@ deps.dagger = dagger
 def espresso = [:]
 espresso.core = "androidx.test.espresso:espresso-core:$versions.espresso"
 espresso.junit_ext = "androidx.test.ext:junit:1.1.1"
+espresso.idling = "androidx.test.espresso:espresso-idling-resource:$versions.espresso"
+espresso.contrib = "androidx.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intent = "androidx.test.espresso:espresso-intents:$versions.espresso"
 deps.espresso = espresso
 
 def mockito = [:]
@@ -80,7 +85,7 @@ mockito.inline = "org.mockito:mockito-inline:$versions.mockito"
 deps.mockito = mockito
 
 def kotlin = [:]
-kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0"
 kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
@@ -102,6 +107,13 @@ def leakcanary = [:]
 leakcanary.debug = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
 deps.leakcanary = leakcanary
 
+def allure = [:]
+allure.model = "io.qameta.allure:allure-kotlin-model:$versions.allure"
+allure.commons = "io.qameta.allure:allure-kotlin-commons:$versions.allure"
+allure.android = "io.qameta.allure:allure-kotlin-android:$versions.allure"
+allure.junit4 = "io.qameta.allure:allure-kotlin-junit4:$versions.allure"
+deps.allure = allure
+
 deps.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"
 deps.junit = "junit:junit:$versions.junit"
@@ -111,6 +123,7 @@ deps.joda_time = "net.danlew:android.joda:$versions.joda_time"
 deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_logging_interceptor"
 deps.arch_core = "androidx.arch.core:core-testing:$versions.arch_core"
 deps.test_rules = "androidx.test:rules:$versions.test_rules"
+deps.uiautomator = "androidx.test.uiautomator:uiautomator:$versions.uiautomator"
 
 ext.deps = deps
 

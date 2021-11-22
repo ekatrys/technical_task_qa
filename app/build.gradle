@@ -12,14 +12,17 @@ android {
         targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'SERVER_URL', "$FeedUrl"
+        testInstrumentationRunner "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    testOptions {
+        animationsDisabled true
     }
 }
 
@@ -66,5 +69,14 @@ dependencies {
 
     androidTestImplementation deps.espresso.junit_ext
     androidTestImplementation deps.espresso.core
+    implementation deps.espresso.idling
+    androidTestImplementation deps.espresso.contrib
+    androidTestImplementation deps.espresso.intent
     androidTestImplementation deps.test_rules
+    androidTestImplementation deps.uiautomator
+
+    androidTestImplementation deps.allure.model
+    androidTestImplementation deps.allure.commons
+    androidTestImplementation deps.allure.android
+    androidTestImplementation deps.allure.junit4
 }

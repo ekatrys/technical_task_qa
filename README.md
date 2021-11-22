@@ -71,7 +71,7 @@ When - the user clicks one of the image
 Then - user is navigated to the external browser with clicked image loaded
 
 #### Login credentials:
-#### user: password
+#### user: user1
 #### password: password
 
 ##
